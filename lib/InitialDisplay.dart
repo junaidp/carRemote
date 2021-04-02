@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import 'cameraScreen.dart';
 import 'firstscreen.dart';
 
 class InitialDisplay extends StatelessWidget {
@@ -10,6 +11,7 @@ class InitialDisplay extends StatelessWidget {
   Widget build(BuildContext context) {
     Future.delayed(const Duration(milliseconds: 2500), () {
       Navigator.of(context).pushNamed(FirtScreen.routeName);
+      // Navigator.of(context).pushNamed(CameraScreen.routeName);
     });
 
     return Scaffold(

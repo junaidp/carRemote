@@ -2,6 +2,7 @@ import 'package:car_remote/firstscreen.dart';
 import 'package:flutter/material.dart';
 
 import 'InitialDisplay.dart';
+import 'cameraScreen.dart';
 
 void main() {
   runApp(MyApp());
@@ -17,6 +18,9 @@ class MyApp extends StatelessWidget {
           primarySwatch: Colors.blue,
         ),
         home: InitialDisplay(),
-        routes: {FirtScreen.routeName: (ctx) => FirtScreen()});
+        routes: {
+          FirtScreen.routeName: (ctx) => FirtScreen(),
+          CameraScreen.routeName: (ctx) => CameraScreen()
+        });
   }
 }

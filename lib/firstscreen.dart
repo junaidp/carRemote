@@ -1,26 +1,10 @@
-import 'package:car_remote/carview.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:webview_flutter/webview_flutter.dart';
 
 class FirtScreen extends StatelessWidget {
   static final routeName = "firstScreen";
-  FirtScreen() {
-    /* FlutterBlue flutterBlue = FlutterBlue.instance;
-    // Start scanning
-    flutterBlue.startScan(timeout: Duration(seconds: 4));
-
-// Listen to scan results
-    var subscription = flutterBlue.scanResults.listen((results) {
-      // do something with scan results
-      for (ScanResult r in results) {
-        print('${r.device.name} found! rssi: ${r.rssi}');
-      }
-    });
-
-// Stop scanning
-    flutterBlue.stopScan();*/
-  }
+  FirtScreen() {}
 
   @override
   Widget build(BuildContext context) {
@@ -31,10 +15,14 @@ class FirtScreen extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              /*WebView(
-                initialUrl: 'https://www.youtube.com/embed/abc',
-                javaScriptMode: JavaScriptMode.unrestricted,
-              ),*/
+              Container(
+                height: 500,
+                child: WebView(
+                  initialUrl: 'http://192.168.178.56/',
+                  javaScriptMode: JavaScriptMode.unrestricted,
+                ),
+              ),
+
               //CarView(),
               Padding(
                 padding: const EdgeInsets.only(bottom: 150),
