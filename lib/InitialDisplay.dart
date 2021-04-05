@@ -20,14 +20,10 @@ class InitialDisplay extends StatelessWidget {
           child: Center(
             child:
                 Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-              //Image(image: AssetImage('assets/images/logo.png')),
+              Image(image: AssetImage('assets/images/car.png')),
               Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: headingText('Use the mobility of our community'),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: headingText('Nutze die Mobilität der Gemeinschaft'),
+                child: headingText('Lets Run our Car :) '),
               ),
             ]),
           )),

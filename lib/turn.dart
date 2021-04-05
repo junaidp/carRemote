@@ -30,7 +30,7 @@ class _TurnState extends State<Turn> {
     String turn = value > 0 ? "right" : "left";
     double speed = value > 0 ? value : 255 + value;
 
-    var url = Uri.parse('http://127.0.0.1:8080/control/move?command=' +
+    var url = Uri.parse('http://c166eecc3ee5.ngrok.io/control/move?command=' +
         turn +
         '&value=' +
         speed.toString() +

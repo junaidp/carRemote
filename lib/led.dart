@@ -41,7 +41,7 @@ class _LedState extends State<Led> {
     String command = input == 1 ? "redledon" : "redledoff";
     String value = input == 1 ? "255" : "0";
 
-    var url = Uri.parse('http://127.0.0.1:8080/control/move?command=' +
+    var url = Uri.parse('http://c166eecc3ee5.ngrok.io/control/move?command=' +
         command +
         '&value=' +
         value +

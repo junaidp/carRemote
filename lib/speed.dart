@@ -40,7 +40,7 @@ class _SpeedState extends State<Speed> {
     String movement = value > 0 ? "forward" : "reverse";
     double speed = value > 0 ? value : 255 + value;
 
-    var url = Uri.parse('http://127.0.0.1:8080/control/move?command=' +
+    var url = Uri.parse('http://c166eecc3ee5.ngrok.io/control/move?command=' +
         movement +
         '&value=' +
         speed.toString() +
