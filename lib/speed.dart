@@ -2,6 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
+import 'gloabals.dart';
+
 class Speed extends StatefulWidget {
   @override
   _SpeedState createState() => _SpeedState();
@@ -40,7 +42,7 @@ class _SpeedState extends State<Speed> {
     String movement = value > 0 ? "forward" : "reverse";
     double speed = value > 0 ? value : 255 + value;
 
-    var url = Uri.parse('http://c166eecc3ee5.ngrok.io/control/move?command=' +
+    var url = Uri.parse(Globals.url+'/control/move?command=' +
         movement +
         '&value=' +
         speed.toString() +

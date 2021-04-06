@@ -5,6 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:webview_flutter/webview_flutter.dart';
 
+import 'gloabals.dart';
+
 class FirtScreen extends StatelessWidget {
   static final routeName = "firstScreen";
   Speed speed;
@@ -21,25 +23,27 @@ class FirtScreen extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              Padding(
+                padding: const EdgeInsets.only(top: 30),
+              ),
+              SizedBox(
+                child: speed,
+                width: 300,
+              ),
+              Turn(),
+              Padding(padding: const EdgeInsets.only(top: 65), child: Led()),
+              Padding(
+                padding: const EdgeInsets.only(bottom: 110),
+              ),
               SingleChildScrollView(
                 scrollDirection: Axis.vertical,
                 child: Container(
-                  height:500,
+                  height: 300,
                   child: WebView(
                     initialUrl: 'http://192.168.178.56/',
                     javaScriptMode: JavaScriptMode.unrestricted,
                   ),
                 ),
-              ),
-             Padding(
-                padding: const EdgeInsets.only(bottom: 110),
-              ),
-              SizedBox(child: speed, width: 300,),
-               
-            Turn(),
-              Padding(
-                padding: const EdgeInsets.only(top: 35),
-                child: Led()
               ),
             ],
           ),
@@ -52,7 +56,8 @@ class FirtScreen extends StatelessWidget {
     String movement = value > 0 ? "forward" : "reverse";
     double speed = value > 0 ? value : 255 + value;
 
-    var url = Uri.parse('http://c166eecc3ee5.ngrok.io/control/move?command=' +
+    var url = Uri.parse(Globals.url +
+        '/control/move?command=' +
         movement +
         '&value=' +
         speed.toString() +

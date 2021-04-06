@@ -2,6 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
+import 'gloabals.dart';
+
 class Led extends StatefulWidget {
   @override
   _LedState createState() => _LedState();
@@ -40,12 +42,14 @@ class _LedState extends State<Led> {
   void oncall(int input) async {
     String command = input == 1 ? "redledon" : "redledoff";
     String value = input == 1 ? "255" : "0";
-
-    var url = Uri.parse('http://c166eecc3ee5.ngrok.io/control/move?command=' +
+    print("URL:" + Globals.url.toString());
+    var url = Uri.parse(Globals.url +
+        '/control/move?command=' +
         command +
         '&value=' +
         value +
         '');
+
     var response = await http.get(url);
     print('Response status: ${response.statusCode}');
     print('Response body: ${response.body}');

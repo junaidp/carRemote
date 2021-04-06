@@ -3,7 +3,6 @@ import 'dart:async';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import 'cameraScreen.dart';
 import 'firstscreen.dart';
 
 class InitialDisplay extends StatelessWidget {
@@ -16,14 +15,15 @@ class InitialDisplay extends StatelessWidget {
 
     return Scaffold(
       body: Container(
-          decoration: BoxDecoration(color: Colors.blue[600]),
+          decoration: BoxDecoration(color: Colors.white),
           child: Center(
             child:
                 Column(mainAxisAlignment: MainAxisAlignment.center, children: [
               Image(image: AssetImage('assets/images/car.png')),
               Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: headingText('Lets Run our Car :) '),
+                child: Text('Lets Run our Car :) ',
+                    style: TextStyle(color: Colors.blue)),
               ),
             ]),
           )),

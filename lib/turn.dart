@@ -2,6 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
+import 'gloabals.dart';
+
 class Turn extends StatefulWidget {
   @override
   _TurnState createState() => _TurnState();
@@ -30,7 +32,7 @@ class _TurnState extends State<Turn> {
     String turn = value > 0 ? "right" : "left";
     double speed = value > 0 ? value : 255 + value;
 
-    var url = Uri.parse('http://c166eecc3ee5.ngrok.io/control/move?command=' +
+    var url = Uri.parse(Globals.url+'/control/move?command=' +
         turn +
         '&value=' +
         speed.toString() +
